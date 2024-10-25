@@ -1,0 +1,21 @@
+body{
+    padding: 6px;
+    font-family: sans-serif;
+}
+
+.title{
+    font-weight: bold;
+    color: crimson;
+}
+
+.text{
+    font-size: 16pt;
+}
+
+li{
+    text-decoration: none;
+}
+
+.iconssize{
+    width: 16px;
+}
