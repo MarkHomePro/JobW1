@@ -1,21 +1,105 @@
-body{
-    padding: 6px;
-    font-family: sans-serif;
+.wrapper{
+    display: grid;
+    grid-gap: 20px; /*กำหนดระยะห่างระหว่าง Grid*/
 }
 
-.title{
-    font-weight: bold;
-    color: crimson;
+/* Navigation */
+.main-nav ul{
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none; /*ทำให้การแสดงผลที่มี style ใน tag จะหายไป*/
+    grid-template-columns: repeat(4,1fr) ; /*responsive หรือ PWA (Progressive web applications) ของเว็บ fr คือหน่วย fraction เป็นสำหรับแบ่งสัดส่วนพื้นที่การแสดงผล*/
 }
-
-.text{
-    font-size: 16pt;
-}
-
-li{
+.main-nav a{
+    background-color: #dddddd;
+    display: block; /*แสดงผลเป็นกล่อง*/
     text-decoration: none;
+    padding: 0;
+    text-align: center;
+    color: #222222;
+    text-transform: uppercase; /*กำหนดลักษณะการแสดงผลตัวอักษร*/
+    font-size: 20px;
+    box-shadow:0 1px 5px rgba(104, 104, 104, 0.8);
+    transition: all 500ms ease; /*animations การแสดงผล*/
+}
+.main-nav a:hover{ /*hover เปลี่ยนการแสดงผลเมื่อเมาส์เคลื่อนผ่าน*/
+    background-color: #222222;
+    color: #dddddd;
 }
 
-.iconssize{
-    width: 16px;
+/* top container */
+.top-container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+        'hero-sections hero-sections top-box-a'
+        'hero-sections hero-sections top-box-b'
+    ; /*กำหนดพื้นที่การแสดงผล*/
+}
+.hero-sections{
+    grid-area: hero-sections;
+    min-height: 400px;
+    background: url('https://images.pexels.com/photos/35888/amazing-beautiful-breathtaking-clouds.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 3rem; /*root element หน่วยกำหนดขนาดของ font (html font 16px)*/
+    display: flex; /*การแสดงผลที่จัดเคลื่อน content ให้ลงมาอัตตโนมัติ*/
+    flex-direction: column;
+    align-items: start; /*แสดงผลเนื้อหาชิดซ้ายก่อนเสมอ*/
+    justify-content: center;
+    box-shadow:0 1px 5px rgba(104, 104, 104, 0.8);
+}
+.hero-sections h1{
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: #dddddd;
+}
+.hero-sections p{
+    font-size: 1rem;
+    margin-top: 0;
+    color: #dddddd;
+}
+.top-box{
+    background-color: #dddddd;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    box-shadow:0 1px 5px rgba(104, 104, 104, 0.8);
+    padding: 1rem;
+}
+.top-box-a{
+    grid-area: top-box-a;
+}
+.top-box-b{
+    grid-area: top-box-b;
+}
+.top-box p{
+    font-size: 2rem;
+}
+
+/* boxes */
+.boxes{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4,1fr);
+}
+.box{
+    background-color: #dddddd;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow:0 1px 5px rgba(104, 104, 104, 0.8);
+}
+.info{
+    background-color: #dddddd;
+    box-shadow:0 1px 5px rgba(104, 104, 104, 0.8);
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1,1fr);
+}
+.info div{
+    padding: 2rem 2rem;
+}
+img{
+    width: 100%;
 }
